@@ -1,0 +1,42 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.news-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.news-logo > img {
+  width: 28px;
+}
+
+.news-logo > p {
+  font-weight: 700;
+}
+
+.user-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.user-actions > p {
+  font-weight: 500;
+}
+
+.user-actions > button {
+  border: none;
+  padding: 8px 12px;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  font-weight: 700;
+}
