@@ -2,13 +2,13 @@ import React from "react";
 import "./Home.css";
 import Header from "../Header/Header";
 import Navigation from "../Navigation/Navigation";
-import NewsList from "../NewsList/NewsList";
+import { Outlet } from "react-router-dom";
 const Home = () => {
   return (
     <div>
       <Header />
       <Navigation />
-      <NewsList />
+      <Outlet />
     </div>
   );
 };

@@ -49,5 +49,32 @@ export const getLatestNews = () => async (dispatch) => {
   }
 };
 
+export const getTopicNews = (category) => async (dispatch) => {
+  dispatch(newsStart());
+  try {
+    const { data } = await API.getNews(category);
+    dispatch(newsSuccess(data));
+  } catch (error) {
+    console.log(error);
+    dispatch(newsError({ state: true, message: error }));
+  }
+};
+
+export const getSavedNews = (userId) => async (dispatch) => {
+  dispatch(newsStart());
+  try {
+    console.log({ userId });
+    const { data } = await API.getSavedNews(userId);
+    if (data.message === "No saved news") {
+      dispatch(newsSuccess([]));
+    } else {
+      dispatch(newsSuccess(data));
+    }
+  } catch (error) {
+    console.log(error);
+    dispatch(newsError({ state: true, message: error }));
+  }
+};
+
 export const { newsError, newsStart, newsSuccess } = newsSlice.actions;
 export default newsSlice.reducer;

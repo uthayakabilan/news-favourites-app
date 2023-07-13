@@ -1,3 +1,24 @@
+export const categories = [
+  "latest",
+  "news",
+  "sport",
+  "tech",
+  "world",
+  "finance",
+  "politics",
+  "business",
+  "economics",
+  "entertainment",
+  "beauty",
+  "travel",
+  "music",
+  "food",
+  "science",
+  "gaming",
+  "energy",
+  "saved",
+];
+
 export const newsData = {
   status: "ok",
   total_hits: 10000,

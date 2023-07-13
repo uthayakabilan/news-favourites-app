@@ -1,16 +1,23 @@
 import React from "react";
 import "./Navigation.css";
+import { categories } from "../../utils/data";
+import { NavLink } from "react-router-dom";
 const Navigation = () => {
   return (
     <div className="nav-container">
       <div className="nav-actions-container">
-        <div className="featured-actions">
-          <h3>Featured</h3>
-        </div>
-        <div className="seperator"></div>
-        <div className="saved-actions">
-          <h3>Saved</h3>
-        </div>
+        {categories.map((category, index) => {
+          return (
+            <div key={index}>
+              <div className="featured-actions">
+                <h3>
+                  <NavLink to={`/feed/${category}`}>{category}</NavLink>
+                </h3>
+              </div>
+              <div className="seperator"></div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

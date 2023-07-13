@@ -8,4 +8,8 @@ const API = axios.create({
   withCredentials: true,
 });
 
-export const latestNews = () => API.get("/news/latest");
+export const latestNews = () => API.get("/feed/latest");
+export const getNews = (category) => API.get(`/feed/${category}`);
+export const saveNews = (newsData) => API.post("/save/add", newsData);
+export const removeNews = (newsData) => API.post("/save/remove", newsData);
+export const getSavedNews = (userId) => API.get(`/save/saved/${userId}`);
